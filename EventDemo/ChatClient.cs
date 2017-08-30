@@ -31,9 +31,11 @@ class ChatClient
     public static void Main()
 	{
 		ChatServer chat = new ChatServer();
-		// Register to receive event notifications from the server
-		// TO DO:
-		// Add code to register your event handlers
+        // Register to receive event notifications from the server
+        // TO DO:
+        // Add code to register your event handlers
+        chat.Join += new JoinHandler(OnJoinChat);
+        chat.Quit += new QuitHandler(OnQuitChat);
 
 
 		// Call methods on the server
